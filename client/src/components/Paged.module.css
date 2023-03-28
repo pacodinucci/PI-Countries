@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+nav {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: antiquewhite;
+  font-size: 1.2em;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+nav li a {
+  font-family: Righteous;
+  color: sienna;
+  display: block;
+  text-decoration: none;
+  padding: .2em 0.2em;
+}
+
+nav li a:hover {
+  background: #A4A6B9;
+  color: white;
+  cursor: pointer;
+}
+
+nav li a:active {
+  color: black;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  nav li{
+    flex-grow: 1;
+    text-align: center;
+  }
+}

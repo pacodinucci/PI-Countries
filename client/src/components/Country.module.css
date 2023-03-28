@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.card {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-size: 1,5rem;
+  text-align: center;
+  background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+  background-blend-mode: normal, lighten, soft-light;
+  box-shadow: 5px 5px 15px #2B3945;
+  border-radius: 15px;
+  height: 360px;
+  width: 260px;
+  margin: 20px;
+}
+
+.title {
+  color: black;
+  font-size: 1.4em;
+
+}
+
+.item {
+  color: #3d4a57;
+  font-size: 1.2em;
+  margin-top: -20px;
+}
+
+.image {
+  border-radius: 10px;
+  /* fijamos ancho y alto para reservar espacio */
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  max-height: 50%;
+}
+
+.link {
+	font-family: Oswald;
+
+}

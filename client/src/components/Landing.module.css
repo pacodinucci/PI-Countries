@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+.content {
+   display: flex;
+   height: 100vh;
+   /* viewport high */
+   background-color: #587145;
+   margin: 0;
+   padding: 0;
+}
+
+.banner {
+   position: relative;
+   background-color: whitesmoke;
+   width: 50%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+
+   background-size: 50%;
+
+   animation-name: banner;
+   animation-duration: 15s;
+   animation-iteration-count: infinite;
+   animation-direction: normal;
+
+}
+ 
+@keyframes banner {
+   0%, 30% {
+      background-image: url("../images/tokyo.jpg");
+      background-size: cover;
+      opacity: 0,5;
+   }
+   31%, 34% {
+      opacity: 0.5;
+   }
+   35%, 65% {
+      background-image: url("../images/tanzania.jpg");
+      background-size: cover;
+      opacity: 0,5;
+   }
+   66%, 69% {
+      opacity: 0.5;
+   }
+   70%, 100% {
+      opacity: 0,5;
+      background-image: url("../images/amsterdam2.jpg");
+      background-size: cover;
+   }
+}
+
+
+.title {
+   position: relative;
+   font-family: Righteous;
+   letter-spacing: 0.05em;
+   top: 25%;
+   left: 2px;
+   height: 90px;
+   font-size: 4rem;
+   color: whitesmoke;
+}
+
+.quote {
+   position: relative;
+   top: 30%;
+   font-family: Roboto+Mono;
+   font-style: italic;
+   font-size: 1.4em;
+   color: whitesmoke;
+}
+
+.btn {
+   position: relative;
+   font-family: Varela+Round;
+   font-size: 2em;
+   font-weight: 700;
+   color: whitesmoke;
+   background-color: transparent;
+   border: 2px solid whitesmoke;
+   border-radius: 5px;
+   cursor: pointer;
+   top: 55%;  
+   padding: 20px;;
+}
+
+.btn:hover {
+   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+   color: mediumseagreen;
+}
+
+.quoteContinent {
+   position: relative;
+   background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+   width: 50%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+
+   background-size: 100%;
+}
+
