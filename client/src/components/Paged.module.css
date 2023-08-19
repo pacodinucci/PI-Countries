@@ -9,7 +9,7 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: antiquewhite;
+  background: rgb(123, 122, 122);
   font-size: 1.2em;
   border-radius: 8px;
   padding: 5px;
@@ -17,14 +17,14 @@ nav ul {
 
 nav li a {
   font-family: Righteous;
-  color: sienna;
+  color: rgb(239, 237, 237);
   display: block;
   text-decoration: none;
   padding: .2em 0.2em;
 }
 
 nav li a:hover {
-  background: #A4A6B9;
+  background: #8c8d92;
   color: white;
   cursor: pointer;
 }

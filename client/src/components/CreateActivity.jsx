@@ -112,114 +112,119 @@ export default function CreateActivity(){
 
 	return(
 		<div className={styles.content}>
-			<Link className={styles.backbtn} to='/home'><button>Back to Home</button></Link>
-			<h1 className={styles.title}>COUNTRIES PI</h1>
-			<h1 className={styles.subtitle}>CREATE ACTIVITY</h1>
-			<form className={styles.fields} onSubmit={e => handleSubmit(e)}>
-				<div className={styles.name}>
-					<label>Activity name: </label>
-					<input 
-						type='text'
-						value={input.name}
-						name='name'
-						onChange={e => handleChange(e)}
-					/>
-					{errors.name&&<p>{errors.name}</p>}
-				</div>
-				
-				<div className={styles.diff}>
-					<label>Difficulty: </label>
-					<select name='difficulty' onChange={e => handleChange(e)}>
-						<option value=''>Select a difficulty level</option>
-						<option value='1'>1</option>
-						<option value='2'>2</option>
-						<option value='3'>3</option>
-						<option value='4'>4</option>
-						<option value='5'>5</option>
-					</select>
-					{errors.difficulty&&<p>{errors.difficulty}</p>}
-				</div>
-				
-				<div className={styles.dur}>
-					<label>Activity duration in hours: </label>
-					<input 
-						type='number'
-						min='1'
-						value={input.duration}
-						name='duration'
-						onChange={e => handleChange(e)}
-					/>
-					{errors.duration&&<p>{errors.duration}</p>}
-				</div>
-				
-				<div className={styles.season}>
-					<label>Season: </label>
-					<div className={styles.radios}>
-						<label><input 
-							type='radio'
-							name='season'
-							value='Summer'
-							onChange={e => handleRadio(e)}
-						/>Summer</label>
-						
-						<label><input 
-							type='radio'
-							name='season'
-							value='Winter'
-							onChange={e => handleRadio(e)}
-						/>  Winter</label>
-						
-						<label><input 
-							type='radio'
-							name='season'
-							value='Spring'
-							onChange={e => handleRadio(e)}
-						/>  Spring</label>
-						
-						<label><input 
-							type='radio'
-							name='season'
-							value='Autumn'
-							onChange={e => handleRadio(e)}
-						/>  Autumn</label>
-						{errors.season&&<p>{errors.season}</p>}
-					</div>
-				</div>
-				<div>
-					<label>Equipment requiered:</label>
-					<input
-						type='text'
-						name='equipment'
-						value={input.equipment}
-						onChange={ e => handleChange(e)}
+			<div className={styles.title_container}>
+				<Link className={styles.backbtn} to='/home'><h3 className={styles.back}>COUNTRIES OF THE WORLD 🌐</h3></Link>
+				<h1 className={styles.subtitle}>CREATE ACTIVITY</h1>
+			</div>
+			<div className={styles.form_container}>
+				<form className={styles.fields} onSubmit={e => handleSubmit(e)}>
+					<div className={styles.name}>
+						<label>Activity name </label>
+						<input 
+							type='text'
+							value={input.name}
+							name='name'
+							onChange={e => handleChange(e)}
 						/>
-				</div>
-				
-				<label className={styles.choose}>Choose countries: </label>
-				<div className={styles.cou}>
-					<select
-						name='countries'
-						id={input.countries}
-						onChange={e => handleSelect(e)}>
-						{countriesAlpha.map(c => (
-							<option value={c.name} key={c.id}>{c.name}</option>
-							))}
-					</select>
-						
-						{errors.countries&&<p>{errors.countries}</p>}
-				</div>
-				<ul className={styles.screen}>
-					{input.countries.map(e =>
-						<div className={styles.screencou}>
-							<button className={styles.rembtn} onClick={handleRemove} id={e}>x</button>
-							<li className={styles.countryList}>{e}</li>
+						{errors.name && <p>{errors.name}</p>}
+					</div>
+					
+					<div className={styles.diff}>
+						<label>Difficulty </label>
+						<select name='difficulty' onChange={e => handleChange(e)}>
+							<option value=''>Select a difficulty level</option>
+							<option value='1'>1</option>
+							<option value='2'>2</option>
+							<option value='3'>3</option>
+							<option value='4'>4</option>
+							<option value='5'>5</option>
+						</select>
+						{errors.difficulty&&<p>{errors.difficulty}</p>}
+					</div>
+					
+					<div className={styles.dur}>
+						<label>Activity duration in hours </label>
+						<input 
+							type='number'
+							min='1'
+							value={input.duration}
+							name='duration'
+							onChange={e => handleChange(e)}
+						/>
+						{errors.duration&&<p>{errors.duration}</p>}
+					</div>
+					<div className={styles.season}>
+						<label>Season </label>
+						<div className={styles.radios}>
+							<label><input 
+								type='radio'
+								name='season'
+								value='Summer'
+								onChange={e => handleRadio(e)}
+							/>Summer</label>
+							
+							<label><input 
+								type='radio'
+								name='season'
+								value='Winter'
+								onChange={e => handleRadio(e)}
+							/>  Winter</label>
+							
+							<label><input 
+								type='radio'
+								name='season'
+								value='Spring'
+								onChange={e => handleRadio(e)}
+							/>  Spring</label>
+							
+							<label><input 
+								type='radio'
+								name='season'
+								value='Autumn'
+								onChange={e => handleRadio(e)}
+							/>  Autumn</label>
+							{errors.season&&<p>{errors.season}</p>}
 						</div>
-						
-					)}
-				</ul>
-				<button className={styles.sub} type='submit'> Create </button>
-			</form>
-			
+					</div>
+					<div className={styles.equipment}>
+						<label>Equipment requiered</label>
+						<input
+							type='text'
+							name='equipment'
+							value={input.equipment}
+							onChange={ e => handleChange(e)}
+							/>
+					</div>
+					<div className={styles.countries_container}>
+						<div className={styles.countries}>
+							<label className={styles.choose}>Choose countries </label>
+							<div className={styles.cou}>
+								<select
+									name='countries'
+									id={input.countries}
+									onChange={e => handleSelect(e)}>
+									{countriesAlpha.map(c => (
+										<option value={c.name} key={c.id}>{c.name}</option>
+										))}
+								</select>
+									
+									{errors.countries&&<p>{errors.countries}</p>}
+							</div>
+						</div>
+						<ul className={styles.screen}>
+							{input.countries.map(e =>
+								<div className={styles.screencou}>
+									{/* <button className={styles.rembtn} onClick={handleRemove} id={e}>x</button> */}
+									<li className={styles.countryList} onClick={handleRemove} id={e}>{e}</li>
+								</div>
+							)}
+						</ul>
+					</div>
+					<div className={styles.submit_container}>
+						<button className={styles.sub} type='submit'> Create </button>
+					</div>
+				</form>
+			</div>
 		</div>
 	)
 
