@@ -5,6 +5,9 @@ import Home from './components/Home';
 import CreateActivity from './components/CreateActivity';
 import Details from './components/Details';
 import CountryNotFound from './components/CountryNotFound';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:3001';
 
 function App() {
   return (
