@@ -7,7 +7,7 @@ import Details from './components/Details';
 import CountryNotFound from './components/CountryNotFound';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'https://countries-pi-sixl.onrender.com';
 
 function App() {
   return (
