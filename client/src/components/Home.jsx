@@ -20,14 +20,24 @@ export default function Home(){
     	indexOfLastCountry - 1);
 	const [order, setOrder] = useState('');
 
+	const [isLoading, setIsLoading] = useState(true);
+
 	const paged = (pageNumber) => {
 		setCurrentPage(pageNumber)
 	};
 
-	useEffect(()=>{
-		dispatch(getCountries())
-		dispatch(getActivities())
-	},[dispatch])
+	useEffect(() => {
+        // Se activa el loader
+        setIsLoading(true);
+
+        // Se carga los países y actividades
+        dispatch(getCountries())
+            .then(() => dispatch(getActivities()))
+            .finally(() => {
+                // Se desactiva el loader cuando los datos se hayan cargado
+                setIsLoading(false);
+            });
+    }, [dispatch]);
 
 	
 
@@ -40,17 +50,21 @@ export default function Home(){
 				allCountries={allCountries.length}
 				paged={paged}
 				/>
-				<ul className={styles.countriesCards}>
-				{
-					currentCountries?.map( c => {
-						return (
-							<fragment>
-								<Country name={c.name.toUpperCase()} region={c.region} flag={c.flag} key={c.id} id={c.id} />
-							</fragment>
-						)
-					})
-				}
-				</ul>
+				{isLoading ? (
+					<p>Loading...</p>
+				) : (
+					<ul className={styles.countriesCards}>
+					{
+						currentCountries?.map( c => {
+							return (
+								<fragment>
+									<Country name={c.name.toUpperCase()} region={c.region} flag={c.flag} key={c.id} id={c.id} />
+								</fragment>
+							)
+						})
+					}
+					</ul>
+				)}
 				</div>
 			</div>
 			)
