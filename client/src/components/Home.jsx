@@ -51,7 +51,9 @@ export default function Home(){
 				paged={paged}
 				/>
 				{isLoading ? (
-					<div className={styles.loader}></div>
+					<div className={styles.loading_container}>
+						<div className={styles.loader}></div>
+					</div>
 				) : (
 					<ul className={styles.countriesCards}>
 					{

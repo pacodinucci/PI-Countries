@@ -128,6 +128,13 @@
 	justify-items: center;
 }
 
+.loader_container {
+	height: 84vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: fit-content;
