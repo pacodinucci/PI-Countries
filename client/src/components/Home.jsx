@@ -51,7 +51,7 @@ export default function Home(){
 				paged={paged}
 				/>
 				{isLoading ? (
-					<div className={styles.loading_container}>
+					<div className={styles.loader_container}>
 						<div className={styles.loader}></div>
 					</div>
 				) : (
